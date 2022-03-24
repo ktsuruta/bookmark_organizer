@@ -60,6 +60,11 @@ git clone https://github.com/ktsuruta/bookmark_frontend.git
 
 ##　3. Create database
 ```
+docker-compose up
+```
+
+##　4. Create database
+```
 > docker container exec -it bookmark_organizer_db_1 bash
 > mongo
 > use test
@@ -68,7 +73,4 @@ git clone https://github.com/ktsuruta/bookmark_frontend.git
 
 ```
 
-##　4. Create database
-```
-docker-compose up
-```
+
