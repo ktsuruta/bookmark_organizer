@@ -6,7 +6,7 @@ docker
 
 docker-compose
 
-## move to work directory
+## 1. Move to work directory
 ```
 cd hogehoge
 ```
@@ -58,7 +58,7 @@ git clone https://github.com/ktsuruta/bookmark_api.git
 git clone https://github.com/ktsuruta/bookmark_frontend.git
 ```
 
-##　Create database
+##　3. Create database
 ```
 > docker container exec -it bookmark_organizer_db_1 bash
 > mongo
@@ -68,3 +68,7 @@ git clone https://github.com/ktsuruta/bookmark_frontend.git
 
 ```
 
+##　4. Create database
+```
+docker-compose up
+```
