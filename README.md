@@ -63,7 +63,7 @@ git clone https://github.com/ktsuruta/bookmark_frontend.git
 > docker container exec -it bookmark_organizer_db_1 bash
 > mongo
 > use test
-> dbs
+> db
 -> see that you have "test" database.
 
 ```
