@@ -11,9 +11,31 @@ docker-compose
 cd hogehoge
 ```
 
-## 2. Clone related repositories.
-### docker-compose
-
+## 2. Download / Clone related repositories.
+### docker-compose.yaml
+```
+version: '3'
+services:
+  db:
+    image: mongo
+    ports:
+      - "27017:27017"
+    tty: true
+  frontend:
+    build: ./bookmark_frontend
+    ports:
+      - "3000:3000"
+    tty: true
+    depends_on:
+      - backend
+  backend:
+    build: ./bookmark_api
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    tty: true
+```
 
 ### bookmark_api
 ```
