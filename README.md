@@ -58,4 +58,13 @@ git clone https://github.com/ktsuruta/bookmark_api.git
 git clone https://github.com/ktsuruta/bookmark_frontend.git
 ```
 
-### 
+##　Create database
+```
+> docker container exec -it bookmark_organizer_db_1 bash
+> mongo
+> use test
+> dbs
+-> see that you have "test" database.
+
+```
+
