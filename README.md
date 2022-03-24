@@ -12,6 +12,17 @@ cd hogehoge
 ```
 
 ## 2. Download / Clone related repositories.
+### image of work directory
+
+```
+.
+..
+docker-compose.yaml
+bookmark_frontend/
+bookmark_api/
+```
+
+
 ### docker-compose.yaml
 ```
 version: '3'
