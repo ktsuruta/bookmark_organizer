@@ -28,7 +28,7 @@ bookmark_api/
 version: '3'
 services:
   db:
-    image: mongo
+    image: mongo:4.4.6
     ports:
       - "27017:27017"
     tty: true
