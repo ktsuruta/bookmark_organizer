@@ -8,7 +8,7 @@ docker-compose
 
 ## 1. Move to work directory
 ```
-cd hogehoge
+cd bookmark_organizer
 ```
 
 ## 2. Download / Clone related repositories.
