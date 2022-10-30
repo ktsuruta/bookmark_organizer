@@ -28,14 +28,16 @@ bookmark_api/
 version: '3'
 services:
   db:
-    image: mongo:4.4.6
-    ports:
+    image: mongo
+    ports: 
       - "27017:27017"
+    hostname: db-server
     tty: true
   frontend:
     build: ./bookmark_frontend
     ports:
       - "3000:3000"
+    hostname: frontend 
     tty: true
     depends_on:
       - backend
@@ -45,7 +47,53 @@ services:
       - "5000:5000"
     depends_on:
       - db
+    hostname: backend
     tty: true
+  preview:
+    build: ./preview_api
+    ports:
+      - "5001:5000"
+    hostname: preview
+    tty: true
+
+  chrome:
+    image: selenium/node-chrome:4.5.3-20221024
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+
+  edge:
+    image: selenium/node-edge:4.5.3-20221024
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+
+  firefox:
+    image: selenium/node-firefox:4.5.3-20221024
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+
+  selenium-hub:
+    image: selenium/hub:4.5.3-20221024
+    container_name: selenium-hub
+    ports:
+      - "4442:4442"
+      - "4443:4443"
+      - "4444:4444"
+
 ```
 
 ### bookmark_api
