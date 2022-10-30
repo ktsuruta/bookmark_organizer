@@ -32,7 +32,7 @@ services:
     image: mongo:5.0.13
     ports: 
       - "27017:27017"
-    hostname: db-server
+    hostname: db
     tty: true
   frontend:
     build: ./bookmark_frontend
@@ -90,6 +90,7 @@ services:
   selenium-hub:
     image: selenium/hub:4.5.3-20221024
     container_name: selenium-hub
+    host_name: selenium-hub
     ports:
       - "4442:4442"
       - "4443:4443"
