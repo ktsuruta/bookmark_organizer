@@ -20,6 +20,7 @@ cd bookmark_organizer
 docker-compose.yaml
 bookmark_frontend/
 bookmark_api/
+preview_api
 ```
 
 
@@ -105,6 +106,12 @@ git clone https://github.com/ktsuruta/bookmark_api.git
 ```
 git clone https://github.com/ktsuruta/bookmark_frontend.git
 ```
+
+### preview_api
+```
+git clone https://github.com/ktsuruta/preview_api.git
+```
+
 
 ##　3. Create database
 ```
