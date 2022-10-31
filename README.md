@@ -28,11 +28,18 @@ preview_api
 ```
 version: '3'
 services:
+  web:
+    image: httpd:2.4
+    ports: 
+      - "80:80"
+    volumes:
+      - ./images:/usr/local/apache2/htdocs
+    hostname: web
   db:
-    image: mongo:5.0.13
+    image: mongo
     ports: 
       - "27017:27017"
-    hostname: db
+    hostname: db-server
     tty: true
   frontend:
     build: ./bookmark_frontend
@@ -42,6 +49,8 @@ services:
     tty: true
     depends_on:
       - backend
+    volumes:
+      - ./bookmark_frontend:/code/bookmark_frontend
   backend:
     build: ./bookmark_api
     ports:
@@ -49,6 +58,9 @@ services:
     depends_on:
       - db
     hostname: backend
+    volumes:
+      - ./bookmark_api:/code/bookmark_api
+      - ./images:/images
     tty: true
   preview:
     build: ./preview_api
@@ -56,6 +68,8 @@ services:
       - "5001:5000"
     hostname: preview
     tty: true
+    volumes:
+      - ./preview_api:/code/preview_api
 
   chrome:
     image: selenium/node-chrome:4.5.3-20221024
@@ -90,11 +104,11 @@ services:
   selenium-hub:
     image: selenium/hub:4.5.3-20221024
     container_name: selenium-hub
-    host_name: selenium-hub
     ports:
       - "4442:4442"
       - "4443:4443"
       - "4444:4444"
+
 
 ```
 
