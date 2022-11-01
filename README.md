@@ -70,6 +70,7 @@ services:
     tty: true
     volumes:
       - ./preview_api:/code/preview_api
+      - ./images:/images
 
   chrome:
     image: selenium/node-chrome:4.5.3-20221024
@@ -108,6 +109,7 @@ services:
       - "4442:4442"
       - "4443:4443"
       - "4444:4444"
+
 
 
 ```
