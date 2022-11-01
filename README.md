@@ -135,6 +135,7 @@ git clone https://github.com/ktsuruta/preview_api.git
 ```
 docker-compose up
 ```
+if bookmark_frontend does not run, enter the docker and run 'npm install'
 
 ##　4. Create database
 ```
