@@ -9,6 +9,7 @@ docker-compose
 ## 1. Move to work directory
 ```
 cd bookmark_organizer
+mkdir images
 ```
 
 ## 2. Download / Clone related repositories.
