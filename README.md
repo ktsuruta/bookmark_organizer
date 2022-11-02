@@ -37,7 +37,7 @@ services:
       - ./images:/usr/local/apache2/htdocs
     hostname: web
   db:
-    image: mongo
+    image: mongo:5.0
     ports: 
       - "27017:27017"
     hostname: db-server
