@@ -147,4 +147,9 @@ if bookmark_frontend does not run, enter the docker and run 'npm install'
 
 ```
 
+## 5. Run frontend manually...
+``
+
+If frontend does not run, you need to log in frontend container and run `npm install` and `npm start`
+
 
