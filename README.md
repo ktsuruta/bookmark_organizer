@@ -150,6 +150,10 @@ if bookmark_frontend does not run, enter the docker and run 'npm install'
 ## 5. Run frontend manually...
 ```
 sudo docker container exec -it bookmark-organizer_web_1 bash
+sudo apt update
+sudo apt install nodejs npm
+npm install
+npm start
 ```
 
 If frontend does not run, you need to log in frontend container and run `npm install` and `npm start`
